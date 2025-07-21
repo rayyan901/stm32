@@ -61,7 +61,7 @@ void writeByte(uint8_t number)
  {
      if (number > 0xff) return; // Ensure number is within the valid range
 
-     // Write the pattern to the GPIO pins for the 7-segment display
+          // Write the number to the GPIO pins
      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, (number & 0x01) ? GPIO_PIN_SET : GPIO_PIN_RESET);
      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, (number & 0x02) ? GPIO_PIN_SET : GPIO_PIN_RESET);
      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5, (number & 0x04) ? GPIO_PIN_SET : GPIO_PIN_RESET);
